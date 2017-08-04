@@ -82,7 +82,7 @@ export class Game extends React.Component<{}, IGameState> {
         pieces[x][y-1] = pieces[x][y];
         pieces[x][y] = 0;
         return true;
-      } else if (y + 1 >= 0 && pieces[x][y+1] === 0) {
+      } else if (y + 1 < this.state.boardSize && pieces[x][y+1] === 0) {
         // move down
         pieces[x][y+1] = pieces[x][y];
         pieces[x][y] = 0;
@@ -92,7 +92,7 @@ export class Game extends React.Component<{}, IGameState> {
         pieces[x-1][y] = pieces[x][y];
         pieces[x][y] = 0;
         return true;
-      } else if (x + 1 >= 0 && pieces[x+1][y] === 0) {
+      } else if (x + 1 < this.state.boardSize && pieces[x+1][y] === 0) {
         // move right
         pieces[x+1][y] = pieces[x][y];
         pieces[x][y] = 0;
