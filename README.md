@@ -1,11 +1,9 @@
-# React-TypeScript
+# N-Puzzle
 
-Minimal boilerplate for building web apps using React and TypeScript with TSX.
-This setup utilizes Webpack for bundling and Jest + Enzyme for unit testing.
+A simple puzzle writted in React with TypeScript
 
 Initial run:
 
 * Install Node.js
 * `npm install`
 * `npm start`
-* `npm test`
