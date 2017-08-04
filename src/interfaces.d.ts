@@ -1,0 +1,3 @@
+interface IPuzzlePieceProps {
+  piece: number;
+}
