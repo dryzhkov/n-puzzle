@@ -44,7 +44,7 @@ export class Timer extends React.Component<ITimerProps, ITimerState> {
   render() {
     return (
       <div>
-        Time:
+        <span>Time: </span> 
         <label>{this.state.hours}</label>
         :
         <label>{this.state.minutes}</label>

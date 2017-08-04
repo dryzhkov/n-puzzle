@@ -20,9 +20,10 @@ export class PuzzlePiece extends React.Component<IPuzzlePieceProps, {}> {
       width: '50px',
       height: '50px',
       fontSize: '2rem',
-      lineHeight: '3rem',
+      lineHeight: '2.5rem',
       textAlign: 'center',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      backgroundColor: '#BBB'
     };
 
     return (

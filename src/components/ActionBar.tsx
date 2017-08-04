@@ -7,13 +7,13 @@ export class ActionBar extends React.Component<IActionBarProps, {}> {
   render() {
     return (
       <div>
-        <span>To start or restart the game, click</span>
-        <button onClick={this.props.shuffleClick}>Shuffle</button>
+        <button style={{marginRight: '.5em', cursor: 'pointer'}} onClick={this.props.shuffleClick}>Shuffle</button>
+        <span>to start or restart the game</span>
         <div>Total moves: {this.props.totalMoves}</div>
+        <Timer gameState={this.props.gameState}></Timer>
         {
           this.props.gameState === GameState.Complete && <div>Congrats. You won!!!</div>
         }
-        <Timer gameState={this.props.gameState}></Timer>
       </div>
     );
   }

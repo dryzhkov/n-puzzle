@@ -6,7 +6,7 @@ export class PuzzleBoard extends React.Component<IPuzzleBoardProps, {}> {
   render() {
     return (
       <div>
-        <table style={{border: '3px solid #777'}}>
+        <table style={{border: '3px solid #999', margin: '1em auto', backgroundColor: '#CCC'}}>
           <tbody>
             {
               this.props.puzzlePieces.map((row,i) => {

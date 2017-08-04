@@ -138,10 +138,11 @@ export class Game extends React.Component<{}, IGameState> {
 
   render() {
     return (
-      <div>
-        <button style={{float: 'right'}} onClick={this.cheat}>Do not click</button>
+      <div style={{width:'50%', margin:'auto', textAlign: 'center', backgroundColor: '#EEE', padding:'.5em'}}>
+        <h2>N-Puzzle Game</h2>
         <ActionBar totalMoves={this.state.totalMoves} shuffleClick={this.shuffle} gameState={this.state.gameState}></ActionBar>
         <PuzzleBoard puzzlePieces={this.state.puzzlePieces} pieceClick={this.puzzlePieceClick} gameState={this.state.gameState}></PuzzleBoard>
+        <button style={{float: 'right'}} onClick={this.cheat}>Do not click</button>
       </div>
     );
   }
