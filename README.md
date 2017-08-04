@@ -1,6 +1,6 @@
 # N-Puzzle
 
-A simple puzzle writted in React with TypeScript
+A simple puzzle written in React with TypeScript
 
 Initial run:
 
