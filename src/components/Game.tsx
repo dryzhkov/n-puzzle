@@ -6,18 +6,22 @@ import { GameState } from '../common/enums';
 import { IGameState } from '../common/interfaces';
 
 export class Game extends React.Component<{}, IGameState> {
+  private static COMPLETED_PUZZLE = [
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12],
+    [13, 14, 15, 0]
+  ];
+
+  private static DEFAULT_BOARD_SIZE = 4;
+
   constructor(props) {
     super(props);
     this.state = {
-      puzzlePieces: [
-        [1, 2, 3, 4],
-        [5, 6, 7, 8],
-        [9, 10, 11, 12],
-        [13, 14, 15, 0]
-      ],
+      puzzlePieces: Game.COMPLETED_PUZZLE,
       gameState: GameState.NotStarted,
       totalMoves: 0,
-      boardSize: 4
+      boardSize: Game.DEFAULT_BOARD_SIZE
     };
 
     this.shuffle = this.shuffle.bind(this);
@@ -50,7 +54,6 @@ export class Game extends React.Component<{}, IGameState> {
     const tempPieces = this.state.puzzlePieces.slice()
     if (this.movePiece(id, tempPieces)) {
       // successfully moved piece, update state
-
       this.setState({
         puzzlePieces: tempPieces,
         gameState: this.isGameOver() ? GameState.Complete : GameState.InProgress,
@@ -120,15 +123,10 @@ export class Game extends React.Component<{}, IGameState> {
 
   private cheat() {
     this.setState({
-      puzzlePieces: [
-        [1, 2, 3, 4],
-        [5, 6, 7, 8],
-        [9, 10, 11, 12],
-        [13, 14, 15, 0]
-      ],
+      puzzlePieces: Game.COMPLETED_PUZZLE,
       gameState: GameState.Complete,
       totalMoves: 1,
-      boardSize: 4
+      boardSize: Game.DEFAULT_BOARD_SIZE
     });
   }
 

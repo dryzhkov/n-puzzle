@@ -6,6 +6,7 @@ import { ITimerProps, ITimerState } from '../common/interfaces';
 export class Timer extends React.Component<ITimerProps, ITimerState> {
   private secondsElapsed;
   private timeoutHandler;
+
   constructor(props) {
     super(props);
     this.secondsElapsed = 0;
