@@ -13,12 +13,12 @@ export class Game extends React.Component<{}, IGameState> {
     [13, 14, 15, 0]
   ];
 
-  private static DEFAULT_BOARD_SIZE = 4;
+  private static DEFAULT_BOARD_SIZE: number = 4;
 
   constructor(props) {
     super(props);
     this.state = {
-      puzzlePieces: Game.COMPLETED_PUZZLE,
+      puzzlePieces: this.deepClone(Game.COMPLETED_PUZZLE),
       gameState: GameState.NotStarted,
       totalMoves: 0,
       boardSize: Game.DEFAULT_BOARD_SIZE
@@ -30,7 +30,7 @@ export class Game extends React.Component<{}, IGameState> {
   }
 
   private shuffle() {
-    const tempPieces = this.state.puzzlePieces.slice();
+    const tempPieces = this.deepClone(this.state.puzzlePieces);
     let m: number, n: number, temp: number;
     for (let i = this.state.boardSize; i > 0; i--) {
       for (let j = this.state.boardSize; j > 0; j--) {
@@ -51,7 +51,7 @@ export class Game extends React.Component<{}, IGameState> {
   }
 
   private puzzlePieceClick(id: number) {
-    const tempPieces = this.state.puzzlePieces.slice()
+    const tempPieces = this.deepClone(this.state.puzzlePieces)
     if (this.movePiece(id, tempPieces)) {
       // successfully moved piece, update state
       this.setState({
@@ -123,10 +123,16 @@ export class Game extends React.Component<{}, IGameState> {
 
   private cheat() {
     this.setState({
-      puzzlePieces: Game.COMPLETED_PUZZLE,
+      puzzlePieces: this.deepClone(Game.COMPLETED_PUZZLE),
       gameState: GameState.Complete,
       totalMoves: 1,
       boardSize: Game.DEFAULT_BOARD_SIZE
+    });
+  }
+
+  private deepClone(input: number[][]): number[][] {
+    return input.map((arr) => {
+        return arr.slice();
     });
   }
 
