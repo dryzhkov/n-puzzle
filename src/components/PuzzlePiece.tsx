@@ -16,18 +16,14 @@ export class PuzzlePiece extends React.Component<IPuzzlePieceProps, {}> {
 
   render() {
     const divStyle = {  
-      border: '3px outset', 
       width: '50px',
-      height: '50px',
-      fontSize: '2rem',
-      lineHeight: '2.5rem',
-      textAlign: 'center',
-      cursor: 'pointer',
-      backgroundColor: '#BBB'
+      height: '50px'
     };
 
+    const styleClass = this.props.gameState === GameState.InProgress ? 'pure-button-active' : 'pure-button-disabled';
+
     return (
-      <button style={divStyle} onClick={this.click} disabled={this.props.gameState !== GameState.InProgress}>
+      <button style={divStyle} className={styleClass} onClick={this.click}>
         { this.props.piece }
       </button>
     );
