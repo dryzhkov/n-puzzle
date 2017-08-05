@@ -1,8 +1,7 @@
-/// <reference path="../interfaces.d.ts"/>
-
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { GameState } from './Game';
+import { GameState } from '../common/enums';
+import { IPuzzlePieceProps } from '../common/interfaces';
 
 export class PuzzlePiece extends React.Component<IPuzzlePieceProps, {}> {
   constructor(props) {

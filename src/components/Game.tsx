@@ -2,12 +2,8 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { PuzzleBoard } from './PuzzleBoard';
 import { ActionBar } from './ActionBar';
-
-export enum GameState {
-  NotStarted,
-  InProgress,
-  Complete
-}
+import { GameState } from '../common/enums';
+import { IGameState } from '../common/interfaces';
 
 export class Game extends React.Component<{}, IGameState> {
   constructor(props) {

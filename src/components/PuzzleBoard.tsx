@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { PuzzlePiece } from './PuzzlePiece';
-
+import { IPuzzleBoardProps } from '../common/interfaces';
 export class PuzzleBoard extends React.Component<IPuzzleBoardProps, {}> {
   render() {
     return (

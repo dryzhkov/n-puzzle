@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { GameState } from './Game';
+import { GameState } from '../common/enums';
+import { IActionBarProps } from '../common/interfaces';
 import { Timer } from './Timer';
 
 export class ActionBar extends React.Component<IActionBarProps, {}> {

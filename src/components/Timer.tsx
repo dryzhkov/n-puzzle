@@ -1,12 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { GameState } from './Game';
-
-interface ITimerState {
-  hours: number;
-  minutes: number;
-  seconds: number;
-}
+import { GameState } from '../common/enums';
+import { ITimerProps, ITimerState } from '../common/interfaces';
 
 export class Timer extends React.Component<ITimerProps, ITimerState> {
   private secondsElapsed;
