@@ -1,10 +1,15 @@
 {
-  "name": "react-typescript-boilerplate",
+  "name": "n-puzzle",
   "version": "1.0.0",
   "description": "Boilerplate for React project with Typescript, Webpack ES6 compilation and hot code reloading",
+  "homepage": "https://dryzhkov.github.io/n-puzzle/",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "start": "node server.js",
-    "test": "jest --no-cache"
+    "build": "webpack",
+    "test": "jest --no-cache",
+    "analyze": "source-map-explorer dist/bundle.*"
   },
   "jest": {
     "transform": {
@@ -30,7 +35,6 @@
   ],
   "author": "Dmitry Ryzhkov <dimaryz@gmail.com>",
   "license": "MIT",
-  "homepage": "",
   "devDependencies": {
     "@types/jest": "^20.0.5",
     "@types/react": "^0.14.36",
@@ -46,7 +50,9 @@
     "webpack-dev-server": "^1.8.2"
   },
   "dependencies": {
+    "gh-pages": "^1.0.0",
     "react": "^15.3.1",
-    "react-dom": "^15.3.1"
+    "react-dom": "^15.3.1",
+    "source-map-explorer": "^1.4.0"
   }
 }
